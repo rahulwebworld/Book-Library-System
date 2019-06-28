@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="col-md-12">
+            <input type="text" [(ngModel)]="term" placeholder="Search Book">
+        <table id="book">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Count</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books |filter:term">
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>{{ book.count }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.price | currency:'USD':true }}</td>
+                    <td>
+                        <button class="button" (click)="showEditBookForm(book)">Edit</button>
+                        <button  class="button" (click)="removeBook(book)">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="button" (click)="showAddBookForm()">Add</button>
+        <br />
+        <br />
+
+        <form *ngIf="bookForm">
+            <h2>Add New Book</h2>
+            <p>ID:
+                <input type="text" name="id" [(ngModel)]="newBook.id" />
+            </p>
+            <p>Name:
+                <input type="text" name="name" [(ngModel)]="newBook.name" />
+            </p>
+            <p>Description:
+                <input type="text" name="description" [(ngModel)]="newBook.description" />
+            </p>
+            <p>Count:
+                <input type="number" name="count" [(ngModel)]="newBook.count" />
+            </p>
+            <p>Author:
+                <input type="text" name="author" [(ngModel)]="newBook.author" />
+            </p>
+            <p>Price:
+                <input type="number" name="price" [(ngModel)]="newBook.price" />
+            </p>
+            <p>
+                <button class ="button" type="submit" (click)="saveBook(newBook)">
+                    Submit
+                </button>
+                <button class ="button" type="button" (click)="cancelNewBook()">
+                    Cancel
+                </button>
+            </p>
+        </form>
+
+        <form *ngIf="editBookForm">
+            <h2>Edit Product Details</h2>
+            <p>ID:
+                <input type="text" name="id" [(ngModel)]="editedBook.id" />
+            </p>
+            <p>Name:
+                <input type="text" name="name" [(ngModel)]="editedBook.name" />
+            </p>
+            <p>Description:
+                <input type="text" name="description" [(ngModel)]="editedBook.description" />
+            </p>
+            <p>Count:
+                <input type="number" name="count" [(ngModel)]="editedBook.count" />
+            </p>
+            <p>Author:
+                <input type="text" name="author" [(ngModel)]="editedBook.author" />
+            </p>
+            <p>Price:
+                <input type="number" name="price" [(ngModel)]="editedBook.price" />
+            </p>
+            <p>
+                <button class ="button" type="submit" (click)="updateBook(editedBook)">Submit</button>
+                <button class ="button" type="button" (click)="cancelEdits()">Cancel</button>
+            </p>
+        </form>
+    </div>
+</div>
