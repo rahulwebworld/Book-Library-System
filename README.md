@@ -2,7 +2,7 @@
 
 Commands to run :
 
-Install dependencies: npm install
+Install dependencies: npm install ,
 Start Server : ng serve
 
 ## Development server
