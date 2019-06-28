@@ -1,8 +1,9 @@
 # BookLibrarySystem
 
-Commands to run : 
-    npm install
-    ng serve
+Commands to run :
+
+Install dependencies: npm install
+Start Server : ng serve
 
 ## Development server
 
