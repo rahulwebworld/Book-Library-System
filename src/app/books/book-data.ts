@@ -2,22 +2,22 @@ import { Book } from './book';
 
 export const BOOK_ITEMS: Book[] = [{
     id: 1,
-    name: ' Ulysses',
-    description: 'use this to cut stuff',
+    name: ' A brief History of Time',
+    description: 'Education',
     count: 2,
-    author: 'Sheldon',
+    author: 'Stephen Hawking',
     price: 4.99
   }, {
     id: 2,
-    name: 'Hamlet',
-    description: 'use this to eat food with',
+    name: 'The Power of Now',
+    description: 'Motivational',
     count: 4,
     author: 'Kabeer',
     price: 10.99,
   }, {
     id: 3,
     name: ' War and Peace',
-    description: 'use this to take shots',
+    description: 'Fiction',
     count: 5,
     author: 'Chetan',
     price: 5.99
